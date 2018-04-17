@@ -24,7 +24,7 @@ public class FactoryAnnotationsDbStrategy {
 	}
 	
 	
-	public AnnotationDbStrategy getPopulateInstanceStrategy(AttrEntinty attr) {
+	public AnnotationDbStrategy getAnnotationDBStrategy(AttrEntinty attr) {
 		Field field = attr.field;
 		
 		if ( has(Embedded.class, field) ) {

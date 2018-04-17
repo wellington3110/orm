@@ -9,6 +9,7 @@ public class Monada<T> {
 	private static final Monada<?> EMPTY = new Monada<>();
 	
 	private static <T> Monada<T> empty() {
+		@SuppressWarnings("unchecked")
 		Monada<T> t = (Monada<T>) EMPTY;
         return t;
 	}

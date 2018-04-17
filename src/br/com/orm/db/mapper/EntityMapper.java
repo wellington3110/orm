@@ -52,7 +52,7 @@ public class EntityMapper implements IEntityMapper {
 
 	public <T> T mapObj(Class<T> typeTable, ResultSet result, List<AttrEntinty> attrs) {
 		T obj = ReflectionHelper.newInstance(typeTable);
-		attrs.forEach(attr -> factory.getPopulateInstanceStrategy(attr).setAttrInInstance(attr, obj, result));
+		attrs.forEach(attr -> factory.getAnnotationDBStrategy(attr).setAttrInInstance(attr, obj, result));
 		return obj;
 	}
 
