@@ -19,10 +19,10 @@ public class EntityMapper implements IEntityMapper {
 	
 	public static IEntityMapper instance = null;
 	private Function<Field, AttrEntinty> mapToAttrEntinty = (Field field) -> Monada.of(field.getAnnotation(Column.class))
-																					.mapIfNullOrContains(c -> field.getName(), Column::value)
-																					.map(Case::camelToSnake)
-																					.map(fieldDb -> new AttrEntinty(fieldDb, field))
-																					.get();		
+											.mapIfNullOrContains(c -> field.getName(), Column::value)
+											.map(Case::camelToSnake)
+											.map(fieldDb -> new AttrEntinty(fieldDb, field))
+											.get();		
 
 	
 	private EntityMapper() {
